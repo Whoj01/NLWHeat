@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  --black: hsl(240, 6%, 13%);
+  --gray: hsl(240, 9%, 89%);
+
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background-color: black;
+}
+
+main {
+  background: url(images/background.png) no-repeat center/cover;
+  width: 100vw;
+
+  height: 100vh;
+  border-radius: 8px;
+}
+
+.container {
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  color: var(--gray);
+}
+
+/* Imagem do usuario */
+.avatar {
+  width: 10rem;
+  margin: 11.5rem auto 0;
+
+  position: relative;
+}
+
+.avatar span {
+  position: absolute;
+  top: -15px;
+  z-index: 1;
+}
+
+.avatar > img {
+  width: 10rem;
+  height: 11.5rem;
+  object-fit: cover;
+
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+
+h1 {
+  font-size: 1.5rem;
+
+  margin-top: 1.5rem;
+}
+
+a {
+  color: var(--gray);
+  text-decoration: none;
+
+  display: flex;
+  gap: 0.75rem;
+
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 0.25rem;
+}
+
+p {
+  margin-top: 2rem;
+}
+
+ul {
+  margin-top: 3rem;
+  list-style: none;
+  padding: 0%;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 720px) {
+  /* background gradient animation */
+  .gradient {
+    background: linear-gradient(45deg, #084177, #687466, #cd8d7b, #fbc498);
+    background-size: 300% 300%;
+    animation: colors 20s ease infinite;
+  }
+
+  @keyframes colors {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  /* rotate animation of image */
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .rotate {
+    animation: rotate 15s ease infinite;
+  }
+
+  /* ajuste do tamanho */
+  .container {
+    min-width: 358px;
+  }
+
+  body {
+    display: grid;
+    place-items: center;
+  }
+
+  /* configuracao do card */
+  main {
+    background: url(images/mask.png) no-repeat / cover;
+    width: 358px;
+    max-height: 540px;
+    margin-top: 1px;
+    transition: 0.4s;
+  }
+
+  .avatar {
+    margin: 4.5rem auto 0;
+  }
+  /* tamanho de margens */
+
+  ul {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* animacao dos links */
+  a {
+    transition: all ease 0.3s;
+  }
+
+  a:hover {
+    transform: scale(1.1);
+  }
+
+  ul li {
+    transition: all ease 0.3s;
+  }
+
+  ul li:hover {
+    transform: scale(1.1);
+  }
+}
